@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web Test</title>
+    <meta charset="UTF-8">
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+    <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-randomizer-components@3.0.2/dist/aframe-randomizer-components.min.js"></script>
+    <script src="https://unpkg.com/aframe-entity-generator-component@3.0.1/dist/aframe-entity-generator-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-gradient-sky@1.0.4/dist/gradientsky.min.js"></script>
+
+  </head>
+
+  <body>
+    <div id="myEmbeddedScene">
+    <a-scene vr-mode-ui="enabled: false" cursor="rayOrigin:mouse" shadow="autoUpdate: true; type:pcfsoft">
+      <a-assets>
+        <a-asset-items id="glass" response-type="arraybuffer" src="assets/glass3.glb"></a-asset-items>
+        <a-asset-items id="sand" response-type="arraybuffer" src="assets/sand9.glb"></a-asset-items>
+        <a-asset-items id="wood" responee-type="arraybuffer" src="assets/wood.glb"></a-asset-items>
+        <img id="water" src="assets/water.PNG"></img>
+        <img id="logo" src="assets/hourglassLogo.png"></img>
+        <audio id="spanish" src="assets/9.ogg" preload="auto"></audio>
+        <audio id="bgm" src="assets/bgm.wav" preload="auto"></audio>
+        <a-mixin id="light"
+                 geometry="primitive: sphere; radius: 1.5"
+                 material="color: #FFF; shader: flat"
+                 light="color: #DDDDFF; distance: 120; intensity: 2; type: point"></a-mixin>
+      </a-assets>
+      <a-entity id="dust" particle-system="preset: dust; color: #24CAFF; particleCount: 1000"></a-entity>
+
+      <a-entity id="ocean1" ocean="density: 20; width: 50; depth: 50; speed: 4"
+                material="color: #b0a994; opacity: 0.75; roughness: 1; src: #water" rotation="90 -90 90" position="0 3 0" scale="0.6 0.6 1">
+      </a-entity>
+
+      <a-entity id="ocean2" ocean="density: 20; width: 50; depth: 50; speed: 4"
+                material="color: #9091bf; opacity: 0.75; roughness: 1; src: #water" rotation="-90 0 0" position="0 -1 0" scale="0.6 0.6 1">
+      </a-entity>
+
+      <a-entity gltf-model="#sand" scale="0.004 0.004 0.004" position="0 1 -1"
+                animation-mixer="clip:CINEMA_4D_Main" rotation="5 90 0"
+                animation="property: position; easing: easeInOutQuad; dir: alternate; dur: 1000; to: 0 1 -1.1; loop: true">
+      </a-entity>
+
+      <a-entity gltf-model="#glass" scale="0.004 0.004 0.004" position="0 1 -1" rotation="95 90 0"
+                animation="property: position; easing: easeInOutQuad; dir: alternate; dur: 1000; to: 0 1 -1.1; loop: true">
+      </a-entity>
+
+      <a-entity gltf-model="#glass" scale="0.0041 0.0041 0.0041" position="0 1 -1" rotation="95 90 0"
+                animation="property: position; easing: easeInOutQuad; dir: alternate; dur: 1000; to: 0 1 -1.1; loop: true">
+      </a-entity>
+
+      <a-entity gltf-model="#wood" scale="0.0041 0.0041 0.0041" position="0 1 -1" rotation="5 90 0"
+                animation="property: position; easing: easeInOutQuad; dir: alternate; dur: 1000; to: 0 1 -1.1; loop: true">
+      </a-entity>
+
+      <a-entity camera position="0 10 -1" rotation="-90 0 0"
+                animation="property: position; to: 0 1 1.5; dur: 10000"
+                animation__2="property: rotation; to: 0 0 0; dur: 10000">
+      </a-entity>
+
+      <a-text id="listenTo" value="listen to" font="Lato-Regular-msdf.json" font-image="Lato-Regular-msdf.png" negate="false" scale="2.5 2.5 2.5" position="-2.179 1.45809 -1.7033" text="color: #49626b" opacity="0" animation="property: opacity; type: opacity; to: 1; dur: 1500; delay: 11500">
+      </a-text>
+
+      <a-text id="theirVoice" value="their voice" font="Lato-Regular-msdf.json" font-image="Lato-Regular-msdf.png" negate="false" scale="2.5 2.5 2" position="0.22566 0.70745 -1.7033" text="color: #405c6b" opacity="0" animation="property: opacity; type: opacity; to: 1; dur: 1500; delay: 11500">
+      </a-text>
+
+      <a-text id="the" value="the" font="Lato-Regular-msdf.json" font-image="Lato-Regular-msdf.png" negate="false"
+              scale="0.5 0.5 0.00001" position="-2.1 2.148 0" text="color: #FFFFFF" opacity="0"
+              animation="property:opacity; type: opacity; to: 1; dur: 1000; delay: 10500">
+      </a-text>
+
+      <a-text id="hourglass" value="hourglass" font="Lato-Regular-msdf.json" font-image="Lato-Regular-msdf.png" negate="false" scale="0.5 0.5 0.00001" position="-1.97887 2.034 0" text="color: #FFFFFF" opacity="0" animation="property: opacity; type: opacity; to: 1; delay: 10500">
+      </a-text>
+
+      <a-text id="back" value="back to menu" font="Lato-Regular-msdf.json" font-image="Lato-Regular-msdf.png" negate="false"
+              scale="0.3 0.3 0.00001" position="-2.1 -0.087 0" text="color: #FFFFFF; opacity: 0"
+              animation="property: opacity; type: opacity; to: 1; dur: 1000; delay: 10500">
+      </a-text>
+
+      <a-plane color="#FFF" height="0.0001" width="20" material="opacity: 0" geometry="height: 0.003; width: 1" position="-2.2049 -0.0454 0"
+               animation="property: opacity; type: opacity; to: 1; dur: 1000; delay: 10500"></a-plane>
+
+      <a-sky id="sky" material="shader: gradient; topColor: 31 74 78; bottomColor: 219 154 154" geometry=""></a-sky>
+
+      <a-light id="light1" type="spot" color="#F9D749" position="-6 1 10" light="type: point; color: #c3ac97; castShadow: true"></a-light>
+
+      <a-light id="light3" type="spot" color="#eea3dd" position="6 1 10" light="type: point; color: #eea4d3; castShadow: true"></a-light>
+
+      <a-light id="light2" type="spot" color="#F9D749" position="0 1 -15" light="type: ambient; color: #e1e2f3; castShadow: true" rotation="0 180 0"></a-light>
+
+      <a-entity sound="src: #spanish; autoplay: true" loop="true"></a-entity>
+
+      <a-entity sound="src: #bgm; autoplay: true" volume="0.5" loop="true"></a-entity>
+
+    </a-scene>
+  </div>
+  </body>
+</html>

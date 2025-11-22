@@ -1,0 +1,13 @@
+body {
+  font-family: helvetica, arial, sans-serif;
+  margin: 2em;
+}
+
+h1 {
+  font-style: italic;
+  color: #373fff;
+}
+a-scene {
+  height: 1080px;
+  width: 1920px;
+}
