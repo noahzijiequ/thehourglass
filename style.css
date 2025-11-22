@@ -1,13 +1,470 @@
 body {
-  font-family: helvetica, arial, sans-serif;
-  margin: 2em;
+  margin: 0px;
+  padding: 0px;
+  width: 100vw;
+  height: 100vh;
+  /*background: url(/assets/watermoving.gif);*/
 }
 
-h1 {
-  font-style: italic;
-  color: #373fff;
+div.ppButton {
+  position: fixed;
+  top: 25vh;
+  border: 0vh;
+  background: transparent;
+  box-sizing: border-box;
+  width: 0vw;
+  height: 10vh;
+
+  border-color: transparent transparent transparent #202020;
+  transition: 100ms all ease;
+  cursor: pointer;
+  z-index: 5;
 }
-a-scene {
-  height: 1080px;
-  width: 1920px;
+
+div.play-button {
+  border-style: solid;
+  border-width: 5vh 0 5vh 8vh;
+}
+
+#clickStop {
+  position: inherit;
+  left: 0vw;
+  top: 31.5vh;
+  display: none;
+  transform: rotate(-32deg);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  z-index: 6
+}
+
+div.ppButton:hover {
+  opacity: 0.8;
+}
+
+div.play-button:hover #clickStop {
+  display: block;
+  transition: 0.2s ease-out;
+}
+
+div.pause-button {
+  border-style: double;
+  border-width: 0vh 0 0vh 8vh;
+}
+
+#clickPlay {
+  position: inherit;
+  left: 2vw;
+  top: 26.5vh;
+  display: none;
+  transform: rotate(-90deg);
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  z-index: 6
+}
+
+div.pause-button:hover {
+  opacity: 0.8;
+}
+
+div.pause-button:hover #clickStop {
+  display: none;
+}
+
+div.pause-button:hover #clickPlay {
+  display: block;
+  transition: 0.2s ease-out;
+}
+
+/*.ppButton {
+  border: 0;
+  background: transparent;
+  box-sizing: border-box;
+  width: 0;
+  height: 74px;
+
+  border-color: transparent transparent transparent #202020;
+  transition: 100ms all ease;
+  cursor: pointer;
+
+  // play state
+  border-style: solid;
+  border-width: 37px 0 37px 60px;
+
+  &.paused {
+    border-style: double;
+    border-width: 0px 0 0px 60px;
+  }
+
+  &:hover {
+    border-color: transparent transparent transparent #404040;
+  }
+}*/
+#seabackground {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url(/assets/waves.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.9;
+  z-index: -10;
+}
+
+/*url(boatmouse.png),*/
+.container {
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(20, auto);
+  grid-template-rows: repeat(12, auto);
+  margin: auto;
+  min-height: 100vh;
+  min-width: 100vw;
+  align-items: center;
+  background: url(/assets/waves.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 2;
+}
+
+.box {
+  position: relative;
+  width: 4.5vw;
+  height: 7.5vh;
+  /*background-color: red;*/
+  z-index: auto;
+}
+
+.box0 {
+  
+  background: url(/assets/IMG-0069.PNG);
+  background-size: 3.3vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: auto;
+}
+
+.box1 {
+
+  background: url(/assets/IMG-0094.PNG);
+  background-size: 3.3vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: auto;
+}
+
+.box2 {
+
+  background: url(/assets/IMG-0060.PNG);
+  background-size: 3.3vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: auto;
+}
+
+.box3 {
+
+  background: url(/assets/IMG-0067.PNG);
+  background-size: 3.3vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: auto;
+}
+
+.box4 {
+
+  background: url(/assets/IMG-0059.PNG);
+  background-size: 3.3vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: auto;
+}
+
+.box5 {
+
+  background: url(/assets/IMG-0091.PNG);
+  background-size: 3.3vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: auto;
+}
+
+.box6 {
+
+  background: url(/assets/IMG-0093.PNG);
+  background-size: 3.3vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: auto;
+}
+
+.box7 {
+
+  position: relative;
+  background: url(/assets/IMG-0087.PNG);
+  background-size: 3.3vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: auto;
+}
+
+.gif0 {
+
+  position: absolute;
+  width: 4.5vw;
+  height: 7.5vh;
+  background: url(/assets/IMG-0069gif.gif);
+  background-size: 3.3vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0%;
+  z-index: auto;
+}
+
+.gif1 {
+
+  position: absolute;
+  width: 4.5vw;
+  height: 7.5vh;
+  background: url(/assets/IMG-0094gif.gif);
+  background-size: 3.3vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0%;
+  z-index: auto;
+}
+
+.gif2 {
+
+  position: absolute;
+  width: 4.5vw;
+  height: 7.5vh;
+  background: url(/assets/IMG-0060_gif2.gif);
+  background-size: 3.3vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0%;
+  z-index: auto;
+}
+
+.gif3 {
+
+  position: absolute;
+  width: 4.5vw;
+  height: 7.5vh;
+  background: url(/assets/IMG-0067gif.gif);
+  background-size: 3.3vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0%;
+  z-index: auto;
+}
+
+.gif4 {
+
+  position: absolute;
+  width: 4.5vw;
+  height: 7.5vh;
+  background: url(/assets/IMG-0059gif.gif);
+  background-size: 3.3vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0%;
+  z-index: auto;
+}
+
+.gif5 {
+
+  position: absolute;
+  width: 4.5vw;
+  height: 7.5vh;
+  background: url(/assets/IMG-0091gif.gif);
+  background-size: 3.3vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0%;
+  z-index: auto;
+}
+
+.gif6 {
+
+  position: absolute;
+  width: 4.5vw;
+  height: 7.5vh;
+  background: url(/assets/IMG-0093gif.gif);
+  background-size: 3.3vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0%;
+  z-index: auto;
+}
+
+.gif7 {
+  
+  position: absolute;
+  width: 4.5vw;
+  height: 7.5vh;
+  background: url(/assets/IMG-0087gif.gif);
+  background-size: 3.3vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0%;
+  z-index: auto;
+  
+}
+
+.textlink {
+  position: inherit;
+  color: black;
+  display: block;
+  padding-top: 5px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 10px;
+  text-align: center;
+  text-shadow:
+    1px 1px 0 #e6e6e6,
+    -1px -1px 0 #e6e6e6,
+    1px -1px 0 #e6e6e6,
+    -1px 1px 0 #e6e6e6,
+    1px 1px 0 #e6e6e6;
+}
+
+
+.box0:hover .gif0 {
+  opacity: 100%;
+  cursor: pointer;
+}
+
+.box1:hover .gif1 {
+  opacity: 100%;
+  cursor: pointer;
+}
+
+.box2:hover .gif2 {
+  opacity: 100%;
+  cursor: pointer;
+}
+
+.box3:hover .gif3 {
+  opacity: 100%;
+  cursor: pointer;
+}
+
+.box4:hover .gif4 {
+  opacity: 100%;
+  cursor: pointer;
+}
+
+.box5:hover .gif5 {
+  opacity: 100%;
+  cursor: pointer;
+}
+
+.box6:hover .gif6 {
+  opacity: 100%;
+  cursor: pointer;
+}
+
+.box7:hover .gif7 {
+  opacity: 100%;
+  cursor: pointer;
+}
+
+
+
+
+.boatcontainer {
+  position: relative;
+  z-index: 11;
+}
+
+.boat {
+  position: absolute;
+  left: 24vh;
+  top: 25vh;
+  opacity: 90%;
+  width: 35vw;
+  height: 45vh;
+  background: url(/assets/IMG-0077.PNG);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 11;
+}
+
+/*TextWindow*/
+.padded-multiline {
+  position: absolute;
+
+  line-height: 1.5;
+  padding: 0px 0;
+  width: 35vw;
+  margin: 20px auto;
+  z-index: 2;
+}
+
+.description1 {
+  position: relative;
+  top: 30vh;
+  left: 45vw;
+  color: black;
+  display: none;
+  padding: 0.45rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 1.5vh;
+  text-shadow:
+    1px 1px 0 #e6e6e6,
+    -1px -1px 0 #e6e6e6,
+    1px -1px 0 #e6e6e6,
+    -1px 1px 0 #e6e6e6,
+    1px 1px 0 #e6e6e6;
+}
+
+.description2 {
+  position: relative;
+  top: 55vh;
+  left: 50vw;
+  color: black;
+  display: none;
+  padding: 0.45rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 1.5vh;
+  text-shadow:
+    1px 1px 0 #e6e6e6,
+    -1px -1px 0 #e6e6e6,
+    1px -1px 0 #e6e6e6,
+    -1px 1px 0 #e6e6e6,
+    1px 1px 0 #e6e6e6;
+}
+
+.boatcontainer:hover .description1{
+  display: block;
+}
+
+.boatcontainer:hover .description2{
+  display: block;
+}
+
+#textMove {
+  position: absolute;
+  left: 28vh;
+  top: 20vh;
+  opacity: 90%;
+  width: 10px;
+  height: 10px;
+  z-index: 2;
+}
+
+#textMove2 {
+  position: absolute;
+  left: 65vh;
+  top: 30vh;
+  opacity: 90%;
+  width: 10px;
+  height: 10px;
+  z-index: 2;
 }
