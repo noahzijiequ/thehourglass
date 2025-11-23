@@ -1,0 +1,344 @@
+body{
+  margin:0px;
+  padding:0px;
+  width:100vw;
+  height:100vh;
+  /*background: url(/assets/watermoving.gif);*/
+
+}
+
+
+
+div.ppButton {
+  position:fixed;
+	margin-top: 20vh;
+	width: 120px;
+	height: 120px;
+	box-sizing: border-box;
+	transition: 0.2s ease-out;
+  z-index: 5;
+  cursor: pointer;
+}
+
+div.play-button {
+
+	border: 50px solid #000000;
+	border-width: 5vw 0 5vw 10vw;
+	border-color: transparent transparent transparent #000000;
+	box-shadow: -0.5vw 0 0 0 #04DB61;
+
+}
+
+#clickStop {
+  position:inherit;
+  left:7vw;
+  top:28vh;
+  display:none;
+  transform: rotate(-26deg);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  z-index: 6
+
+}
+
+div.ppButton:hover {
+  opacity: 0.8;
+}
+div.play-button:hover #clickStop{
+  display:block;
+  transition: 0.2s ease-out;
+}
+
+div.pause-button {
+
+	border: 50px double #000000;
+	border-width: 0 0 0 10vw;
+	border-color: transparent transparent transparent #000000;
+	box-shadow: -0.5vw 0 0 0 #F0A202;
+}
+
+#clickPlay{
+  position:inherit;
+  left:0vw;
+  top:28vh;
+  display:none;
+  transform: rotate(-90deg);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  z-index: 6
+}
+
+div.pause-button:hover {
+  opacity: 0.8;
+}
+div.pause-button:hover #clickStop{
+  display:none;
+}
+div.pause-button:hover #clickPlay{
+  display:block;
+  transition: 0.2s ease-out;
+}
+
+/*.ppButton {
+  border: 0;
+  background: transparent;
+  box-sizing: border-box;
+  width: 0;
+  height: 74px;
+
+  border-color: transparent transparent transparent #202020;
+  transition: 100ms all ease;
+  cursor: pointer;
+
+  // play state
+  border-style: solid;
+  border-width: 37px 0 37px 60px;
+
+  &.paused {
+    border-style: double;
+    border-width: 0px 0 0px 60px;
+  }
+
+  &:hover {
+    border-color: transparent transparent transparent #404040;
+  }
+}
+
+
+
+
+
+
+
+/*#seabackground{
+  position:fixed;
+  left: 0;
+  top: 0;
+  min-width: 100%;
+  min-height: 100%;
+  filter: brightness(1.5) contrast(0.5);
+  z-index: -10;
+}
+
+/*url(boatmouse.png),*/
+
+.container{
+  position:absolute;
+  display: grid;
+  grid-template-columns: repeat(20, auto);
+  grid-template-rows: repeat(15,auto);
+  margin: auto;
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  z-index: 2;
+
+}
+
+.box {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  /*background-color: red;*/
+  background: url(/assets/IMG-0069.PNG);
+  background-size: 49px;
+  margin: 2px;
+  justify-self:center;
+  z-index: auto;
+  }
+
+.box1 {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin: 2px;
+    background: url(/assets/IMG-0094.PNG);
+    background-size: 49px;
+    justify-self:center;
+    z-index: auto;
+    }
+
+.box2 {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        margin: 2px;
+        background: url(/assets/IMG-0060.PNG);
+        background-size: 49px;
+        justify-self:center;
+        z-index: auto;
+        }
+
+.box3 {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      margin: 2px;
+      background: url(/assets/IMG-0067.PNG);
+      background-size: 49px;
+      justify-self:center;
+      z-index: auto;
+      }
+
+      .box4 {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            margin: 2px;
+            background: url(/assets/IMG-0059.PNG);
+            background-size: 49px;
+            justify-self:center;
+            z-index: auto;
+            }
+
+            .box5 {
+                  position: relative;
+                  width: 50px;
+                  height: 50px;
+                  margin: 2px;
+                  background: url(/assets/IMG-0091.PNG);
+                  background-size: 49px;
+                  justify-self:center;
+                  z-index: auto;
+                  }
+
+                  .box6 {
+                        position: relative;
+                        width: 50px;
+                        height: 50px;
+                        margin: 2px;
+                        background: url(/assets/IMG-0093.PNG);
+                        background-size: 49px;
+                        justify-self:center;
+                        z-index: auto;
+                        }
+
+                        .box7 {
+                              position: relative;
+                              width: 50px;
+                              height: 50px;
+                              margin: 2px;
+                              background: url(/assets/IMG-0087.PNG);
+                              background-size: 49px;
+                              justify-self:center;
+                              transform:rotate((random(30 / 2))deg);
+                              z-index: auto;
+                              }
+
+
+.gif {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: url(/assets/IMG-0060_gif2.gif);
+    background-size: 49px;
+    opacity: 0%;
+    justify-self:center;
+    z-index: auto;
+
+}
+
+.box1:hover .gif{
+  opacity: 100%;
+  cursor: pointer;
+}
+
+.boatcontainer {
+  position:relative;
+  z-index: 11;
+}
+
+.boat {
+  position:absolute;
+  left:30vh;
+  top:25vh;
+  opacity: 90%;
+  width: 400px;
+  height: 320px;
+  background: url(/assets/IMG-0077.PNG);
+  background-size: 400px;
+  z-index: 11;
+
+}
+
+/*TextWindow*/
+
+.padded-multiline {
+  position:absolute;
+  top:65vh;
+  left:50vw;
+  line-height: 1.5;
+  padding: 0px 0;
+  width: 400px;
+  margin: 20px auto;
+  z-index: 2;
+}
+
+.description {
+  position:inherit;
+  color: black;
+  display:none;
+  padding: 0.45rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-size: 12px;
+  text-shadow:
+       1px 1px 0 #e6e6e6,
+     -1px -1px 0 #e6e6e6,
+      1px -1px 0 #e6e6e6,
+      -1px 1px 0 #e6e6e6,
+       1px 1px 0 #e6e6e6;
+
+}
+
+.boatcontainer:hover .description{
+  display:block;
+}
+
+
+
+#textMove {
+  position:absolute;
+  left:28vh;
+  top:20vh;
+  opacity: 90%;
+  width: 10px;
+  height: 10px;
+  z-index: 2;
+
+}
+
+#textMove2 {
+  position:absolute;
+  left:65vh;
+  top:30vh;
+  opacity: 90%;
+  width: 10px;
+  height: 10px;
+  z-index: 2;
+
+}
+
+
+
+
+/*.padded-multiline span {
+  position:inherit;
+  background-color: #525252;
+  background-blend-mode: darken;
+  color: #fff;
+  display: inline;
+  padding: 0.45rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-size: 12px;
+  z-index: 6
+
+}
+
+
+
+/*audio.btton {
+  position: relative;
+  z-index: 99;
+}*/
